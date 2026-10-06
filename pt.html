@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>박예원 (Park Ye Won) | 포트폴리오 & 프로필</title>
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%3E<text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        primaryHover: '#4f46e5',
+                        accent: '#ec4899',
+                        cyanAccent: '#06b6d4',
+                        darkBg: '#0b0f19',
+                        cardBg: 'rgba(17, 24, 39, 0.75)',
+                        borderGlow: 'rgba(99, 102, 241, 0.25)',
+                    },
+                    fontFamily: {
+                        sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'Roboto', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Pretendard Font -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background-color: #0b0f19;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+        
+        .glass-card {
+            background: rgba(18, 24, 38, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            box-shadow: 0 12px 40px 0 rgba(99, 102, 241, 0.15);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #a5b4fc 0%, #6366f1 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-text-cyan {
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glow-sphere {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.25;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b0f19;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6366f1;
+        }
+    </style>
+</head>
+<body class="relative min-h-screen selection:bg-indigo-500 selection:text-white">
+
+    <!-- Background Ambient Glows -->
+    <div class="glow-sphere bg-indigo-600 w-[500px] h-[500px] -top-20 -left-20"></div>
+    <div class="glow-sphere bg-pink-600 w-[600px] h-[600px] top-[40%] -right-40"></div>
+    <div class="glow-sphere bg-cyan-600 w-[500px] h-[500px] bottom-20 left-10"></div>
+
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-md bg-[#0b0f19]/80 border-b border-white/5">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2 font-bold text-lg text-white group">
+                <span class="text-xl transform group-hover:rotate-12 transition-transform duration-300">🚀</span>
+                <span>박예원 <span class="text-xs text-indigo-400 font-normal">Park Ye Won</span></span>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300">
+                <a href="#about" class="hover:text-indigo-400 transition-colors">소개 & 철학</a>
+                <a href="#competency" class="hover:text-indigo-400 transition-colors">핵심 역량</a>
+                <a href="#projects" class="hover:text-indigo-400 transition-colors">핵심 프로젝트</a>
+                <a href="#history" class="hover:text-indigo-400 transition-colors">이력 & 수상</a>
+                <a href="#portfolio" class="hover:text-indigo-400 transition-colors">포트폴리오 링크</a>
+                <a href="mailto:yewon0489@gmail.com" class="px-4 py-2 rounded-full bg-gradient-to-r from-indigo-500 to-pink-500 text-white font-semibold text-xs hover:opacity-90 transition-opacity shadow-lg shadow-indigo-500/25">
+                    Contact Me
+                </a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white focus:outline-none">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#0e1424] border-b border-white/10 px-6 py-4 space-y-3">
+            <a href="#about" class="block text-slate-300 hover:text-indigo-400 py-1">소개 & 철학</a>
+            <a href="#competency" class="block text-slate-300 hover:text-indigo-400 py-1">핵심 역량</a>
+            <a href="#projects" class="block text-slate-300 hover:text-indigo-400 py-1">핵심 프로젝트</a>
+            <a href="#history" class="block text-slate-300 hover:text-indigo-400 py-1">이력 & 수상</a>
+            <a href="#portfolio" class="block text-slate-300 hover:text-indigo-400 py-1">포트폴리오 링크</a>
+            <div class="pt-2">
+                <a href="mailto:yewon0489@gmail.com" class="block text-center py-2 rounded-lg bg-indigo-600 text-white font-semibold text-sm">
+                    Contact Me
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative z-10 pt-28 pb-20 max-w-6xl mx-auto px-6 space-y-28">
+
+        <!-- HERO SECTION -->
+        <section class="flex flex-col items-start justify-center min-h-[75vh] pt-4">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-300 text-xs font-semibold mb-6 tracking-wide backdrop-blur-sm">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                Art & Tech 기반 콘텐츠 · 비즈니스 기획자
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.2] mb-6">
+                데이터로 <span class="gradient-text">기준</span>을 세우고,<br/>
+                예술로 <span class="gradient-text">몰입</span>을 설계하며,<br/>
+                끝까지 <span class="gradient-text">실행</span>해내는 사람.
+            </h1>
+
+            <p class="text-lg sm:text-xl text-slate-300 max-w-2xl leading-relaxed mb-8">
+                기술과 예술의 경계에서, 아이디어를 현실의 비즈니스와 콘텐츠로 구현해내는 기획자 <strong class="text-white font-semibold underline decoration-indigo-400 decoration-2 underline-offset-4">박예원</strong>입니다.
+            </p>
+
+            <!-- Quick Meta Tags / Keywords -->
+            <div class="flex flex-wrap gap-2 mb-10">
+                <span class="px-3 py-1 rounded-md bg-white/5 border border-white/10 text-slate-300 text-xs font-medium">#실행력</span>
+                <span class="px-3 py-1 rounded-md bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-medium">#Art&Tech</span>
+                <span class="px-3 py-1 rounded-md bg-pink-500/10 border border-pink-500/20 text-pink-300 text-xs font-medium">#이머시브콘텐츠</span>
+                <span class="px-3 py-1 rounded-md bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 text-xs font-medium">#WebAR</span>
+                <span class="px-3 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-xs font-medium">#데이터분석</span>
+            </div>
+
+            <!-- Contact & Action Bar -->
+            <div class="w-full glass-card rounded-2xl p-6 flex flex-wrap items-center justify-between gap-6 border border-white/10">
+                <div class="space-y-2">
+                    <div class="flex items-center gap-3 text-sm text-slate-300">
+                        <i class="fa-regular fa-envelope text-indigo-400 w-4 text-center"></i>
+                        <span class="font-medium text-slate-400">Email:</span>
+                        <a href="mailto:yewon0489@gmail.com" class="text-white hover:text-indigo-400 underline underline-offset-2 transition-colors font-mono">yewon0489@gmail.com</a>
+                    </div>
+                    <div class="flex items-center gap-3 text-sm text-slate-300">
+                        <i class="fa-solid fa-phone text-indigo-400 w-4 text-center"></i>
+                        <span class="font-medium text-slate-400">Phone:</span>
+                        <span class="text-white font-mono">010-4570-0489</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-sm text-slate-300">
+                        <i class="fa-solid fa-graduation-cap text-indigo-400 w-4 text-center"></i>
+                        <span class="font-medium text-slate-400">Education:</span>
+                        <span class="text-white">전북대학교 스마트팜학과(주전공) · 예술융합창작(복수전공)</span>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <a href="mailto:yewon0489@gmail.com" class="px-5 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm transition-all duration-200 flex items-center gap-2 shadow-lg shadow-indigo-600/30">
+                        <i class="fa-solid fa-paper-plane"></i> 메일 보내기
+                    </a>
+                    <a href="#portfolio" class="px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm transition-all duration-200 flex items-center gap-2 border border-white/10">
+                        <i class="fa-solid fa-arrow-down"></i> 포트폴리오 보기
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: ABOUT ME & 3 PRINCIPLES -->
+        <section id="about" class="space-y-8">
+            <div class="space-y-2">
+                <span class="text-xs font-bold tracking-widest text-indigo-400 uppercase">Core Philosophy</span>
+                <h2 class="text-3xl font-bold text-white flex items-center gap-3">
+                    <span>🙋‍♂️ 저는 이런 사람입니다</span>
+                </h2>
+                <p class="text-slate-400 text-sm">스스로 세운 기준과 집요한 성찰로 끝까지 완수하는 기획자 박예원의 3가지 가치</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="glass-card rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-amber-500/20 to-orange-500/20 border border-amber-500/30 flex items-center justify-center text-amber-400 text-xl group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <span class="text-xs font-semibold text-amber-400 tracking-wider uppercase">Philosophy 01</span>
+                        <h3 class="text-xl font-bold text-white group-hover:text-amber-300 transition-colors">
+                            생각을 현실로 만드는<br/>'막힘없는 추진력'
+                        </h3>
+                        <p class="text-sm text-slate-300 leading-relaxed">
+                            아이디어가 머릿속에만 머무는 것을 경계합니다. 필요한 환경이 없다면 발로 뛰어 직접 인프라를 구축하고, 일상에서 발견한 작은 아이디어는 실제 브랜드 창업(소스포켓)으로 끝까지 연결해 냅니다.
+                        </p>
+                        <p class="text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-3">
+                            낯선 환경이나 처음 접하는 과제 앞에서도 망설이기보다는 능동적으로 부딪히고 실패하며, 기어코 결과물을 만들어내는 포기를 모르는 끈기를 가지고 있습니다.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="glass-card rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-indigo-500/20 to-pink-500/20 border border-indigo-500/30 flex items-center justify-center text-indigo-400 text-xl group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+                        <span class="text-xs font-semibold text-indigo-400 tracking-wider uppercase">Philosophy 02</span>
+                        <h3 class="text-xl font-bold text-white group-hover:text-indigo-300 transition-colors">
+                            AI의 기술보다<br/>'사람의 고유한 시각'
+                        </h3>
+                        <p class="text-sm text-slate-300 leading-relaxed">
+                            다양한 생성형 AI와 최신 툴을 능숙하게 다루지만, '툴을 잘 쓴다'는 것에 만족하지 않습니다. 기획의 중심에는 언제나 AI가 대체할 수 없는 인간 고유의 감각을 둡니다.
+                        </p>
+                        <p class="text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-3">
+                            <em>"사람은 어느 포인트에서 감동하는가?"</em>, <em>"어떤 실질적 가치를 주는가?"</em>라는 본질적인 질문을 던지며, AI를 저만의 철학과 시각을 현실로 구현하는 강력한 도구로 활용합니다.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="glass-card rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-xl group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-gem"></i>
+                        </div>
+                        <span class="text-xs font-semibold text-cyan-400 tracking-wider uppercase">Philosophy 03</span>
+                        <h3 class="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors">
+                            단점을 직시하고 본질을 깎아내는<br/>'끊임없는 성찰'
+                        </h3>
+                        <p class="text-sm text-slate-300 leading-relaxed">
+                            때로는 완벽을 기하려다 판단 기준이 모호해지거나 꾸밈이 많아질 때가 있음을 스스로 인지합니다. 부족함을 피하지 않고 적극적인 피드백을 통해 극복합니다.
+                        </p>
+                        <p class="text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-3">
+                            거듭된 수정과 성찰의 과정을 거쳐 불필요한 장식을 덜어내고, 기획의 <strong>'진짜 목적(Core)'</strong>에 뾰족하게 집중하는 훈련을 멈추지 않고 있습니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: CORE COMPETENCIES -->
+        <section id="competency" class="space-y-8">
+            <div class="space-y-2">
+                <span class="text-xs font-bold tracking-widest text-indigo-400 uppercase">Capabilities</span>
+                <h2 class="text-3xl font-bold text-white flex items-center gap-3">
+                    <span>💡 핵심 역량 (Core Competencies)</span>
+                </h2>
+                <p class="text-slate-400 text-sm">비즈니스 기획, 테크 & 몰입 연출, 정밀 데이터 분석의 삼각 축</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- 1. 기획 & PM -->
+                <div class="glass-card rounded-2xl p-6 border-t-4 border-t-indigo-500 space-y-5">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-compass text-indigo-400"></i> 기획 & PM
+                        </h3>
+                        <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-indigo-500/20 text-indigo-300">Planning & Lead</span>
+                    </div>
+
+                    <div class="space-y-3">
+                        <p class="text-xs font-semibold text-slate-400 uppercase">강점으로 작동하는 역량</p>
+                        <ul class="text-sm text-slate-300 space-y-2">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-indigo-400 text-xs mt-1"></i>
+                                <span>맨땅에서 시작해 사업화(사업자 등록, B2B 제안)까지 이끄는 추진력</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-indigo-400 text-xs mt-1"></i>
+                                <span>기업 분석 및 문제 해결(리빙랩), 팀 방향성 조율 및 예산 총괄</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-4 border-t border-white/5">
+                        <p class="text-xs font-semibold text-slate-400 uppercase mb-2">활용 가능 툴</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-xs text-slate-200 font-medium">Notion</span>
+                            <span class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-xs text-slate-200 font-medium">MS Office</span>
+                            <span class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-xs text-slate-200 font-medium">Figma</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Tech & 몰입 설계 -->
+                <div class="glass-card rounded-2xl p-6 border-t-4 border-t-pink-500 space-y-5">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-vr-cardboard text-pink-400"></i> Tech & 몰입 설계
+                        </h3>
+                        <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-pink-500/20 text-pink-300">Immersive & AI</span>
+                    </div>
+
+                    <div class="space-y-3">
+                        <p class="text-xs font-semibold text-slate-400 uppercase">강점으로 작동하는 역량</p>
+                        <ul class="text-sm text-slate-300 space-y-2">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-pink-400 text-xs mt-1"></i>
+                                <span>AI 툴 융합 워크플로우를 통한 고품질 비주얼/영상 프로토타이핑</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-pink-400 text-xs mt-1"></i>
+                                <span>리얼타임 렌더링 기반 가상 환경 및 인터랙티브 공간 연출</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-4 border-t border-white/5">
+                        <p class="text-xs font-semibold text-slate-400 uppercase mb-2">활용 가능 툴</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1 rounded-md bg-pink-500/10 border border-pink-500/20 text-xs text-pink-200 font-medium">Unreal Engine</span>
+                            <span class="px-2.5 py-1 rounded-md bg-pink-500/10 border border-pink-500/20 text-xs text-pink-200 font-medium">Midjourney</span>
+                            <span class="px-2.5 py-1 rounded-md bg-pink-500/10 border border-pink-500/20 text-xs text-pink-200 font-medium">Kling AI</span>
+                            <span class="px-2.5 py-1 rounded-md bg-pink-500/10 border border-pink-500/20 text-xs text-pink-200 font-medium">Blender</span>
+                            <span class="px-2.5 py-1 rounded-md bg-pink-500/10 border border-pink-500/20 text-xs text-pink-200 font-medium">Premiere</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Data & 분석 -->
+                <div class="glass-card rounded-2xl p-6 border-t-4 border-t-cyan-500 space-y-5">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-chart-line text-cyan-400"></i> Data & 분석
+                        </h3>
+                        <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-cyan-500/20 text-cyan-300">Data Analytics</span>
+                    </div>
+
+                    <div class="space-y-3">
+                        <p class="text-xs font-semibold text-slate-400 uppercase">강점으로 작동하는 역량</p>
+                        <ul class="text-sm text-slate-300 space-y-2">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-cyan-400 text-xs mt-1"></i>
+                                <span>주관적 판단을 배제하고 통계와 환경 데이터를 기반으로 한 문제 해결</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-cyan-400 text-xs mt-1"></i>
+                                <span>하드웨어 시스템 자체 구축 및 정밀 센서 데이터 샘플링</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-4 border-t border-white/5">
+                        <p class="text-xs font-semibold text-slate-400 uppercase mb-2">활용 가능 툴</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1 rounded-md bg-cyan-500/10 border border-cyan-500/20 text-xs text-cyan-200 font-medium">Python</span>
+                            <span class="px-2.5 py-1 rounded-md bg-cyan-500/10 border border-cyan-500/20 text-xs text-cyan-200 font-medium">ANOVA 통계 분석</span>
+                            <span class="px-2.5 py-1 rounded-md bg-cyan-500/10 border border-cyan-500/20 text-xs text-cyan-200 font-medium">LI-600 / 6800 운용</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: FEATURED EXPERIENCES & STORIES -->
+        <section id="projects" class="space-y-10">
+            <div class="space-y-2">
+                <span class="text-xs font-bold tracking-widest text-indigo-400 uppercase">Execution Stories</span>
+                <h2 class="text-3xl font-bold text-white flex items-center gap-3">
+                    <span>🎯 이렇게 고민하고, 이렇게 실행했습니다</span>
+                </h2>
+                <p class="text-slate-400 text-sm">
+                    <span class="text-indigo-300 font-semibold">"문제 발견 ➔ 적극적 실행 ➔ 성찰과 결과"</span>의 프레임워크로 일궈낸 핵심 사례들
+                </p>
+            </div>
+
+            <div class="space-y-8">
+                <!-- Experience 1 -->
+                <div class="glass-card rounded-3xl p-8 transition-all hover:border-cyan-500/40 relative overflow-hidden group">
+                    <div class="flex flex-wrap items-center justify-between gap-4 mb-6 border-b border-white/10 pb-4">
+                        <div class="flex items-center gap-3">
+                            <span class="px-3 py-1 rounded-lg bg-cyan-500/20 text-cyan-300 text-xs font-bold uppercase">Experience 01</span>
+                            <h3 class="text-2xl font-bold text-white">주관을 넘어 데이터로: 스마트팜 수경재배 시스템 직접 구축</h3>
+                        </div>
+                        <span class="text-xs text-slate-400 font-mono bg-white/5 px-3 py-1 rounded-full">식물환경조절공학 연구실 · 원예학회</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- 문제의식 -->
+                        <div class="bg-black/30 rounded-2xl p-5 border border-white/5 space-y-2">
+                            <div class="flex items-center gap-2 text-rose-400 text-sm font-bold">
+                                <i class="fa-solid fa-circle-exclamation"></i> 문제의식
+                            </div>
+                            <p class="text-sm text-slate-300 leading-relaxed">
+                                기존 스마트팜 연구들이 단순히 '적정 농도'에만 치중되어 있어, 생육 단계별 양분 요구도 변화를 추적하는 심도 있는 기준이 필요하다고 생각했습니다.
+                            </p>
+                        </div>
+
+                        <!-- 적극적 실행 -->
+                        <div class="bg-black/30 rounded-2xl p-5 border border-white/5 space-y-2">
+                            <div class="flex items-center gap-2 text-amber-400 text-sm font-bold">
+                                <i class="fa-solid fa-hammer"></i> 적극적 실행
+                            </div>
+                            <p class="text-sm text-slate-300 leading-relaxed">
+                                연구 목적에 맞는 인프라가 부족하여, <strong>NFT(Nutrient Film Technique) 수경재배 시스템 하드웨어를 직접 구상하고 장비를 수급해 실험 라인을 맨땅에서 구축</strong>했습니다. 전문 측정 장비를 직접 운용하며 기공전도도, 광합성 효율 등을 데이터화했습니다.
+                            </p>
+                        </div>
+
+                        <!-- 배운 점 & 성과 -->
+                        <div class="bg-black/30 rounded-2xl p-5 border border-white/5 space-y-2">
+                            <div class="flex items-center gap-2 text-emerald-400 text-sm font-bold">
+                                <i class="fa-solid fa-trophy"></i> 배운 점 & 성과
+                            </div>
+                            <p class="text-sm text-slate-300 leading-relaxed">
+                                모호했던 가설을 통계(ANOVA)를 통해 검증하며 <strong>'객관적 데이터 기반의 의사결정'</strong>의 중요성을 체득했습니다. 이 연구는 <strong>한국원예학회 포스터 발표</strong>로 이어졌으며, 스스로 기준을 세우고 집요하게 파고드는 저만의 무기가 되었습니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience 2 -->
+                <div class="glass-card rounded-3xl p-8 transition-all hover:border-indigo-500/40 relative overflow-hidden group">
+                    <div class="flex flex-wrap items-center justify-between gap-4 mb-6 border-b border-white/10 pb-4">
+                        <div class="flex items-center gap-3">
+                            <span class="px-3 py-1 rounded-lg bg-indigo-500/20 text-indigo-300 text-xs font-bold uppercase">Experience 02</span>
+                            <h3 class="text-2xl font-bold text-white">상상을 비즈니스로: 아티젠스페이스 WebAR & 소스포켓 창업</h3>
+                        </div>
+                        <span class="text-xs text-slate-400 font-mono bg-white/5 px-3 py-1 rounded-full">창업 PM · 아티젠스페이스 인턴</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- 문제의식 -->
+                        <div class="bg-black/30 rounded-2xl p-5 border border-white/5 space-y-2">
+                            <div class="flex items-center gap-2 text-rose-400 text-sm font-bold">
+                                <i class="fa-solid fa-circle-exclamation"></i> 문제의식
+                            </div>
+                            <p class="text-sm text-slate-300 leading-relaxed">
+                                아이디어는 기획서 안에만 머물 때보다, 실제 시장과 소비자를 직접 만날 때 비로소 가치가 있다고 믿습니다.
+                            </p>
+                        </div>
+
+                        <!-- 적극적 실행 -->
+                        <div class="bg-black/30 rounded-2xl p-5 border border-white/5 space-y-2">
+                            <div class="flex items-center gap-2 text-amber-400 text-sm font-bold">
+                                <i class="fa-solid fa-hammer"></i> 적극적 실행
+                            </div>
+                            <p class="text-sm text-slate-300 leading-relaxed">
+                                1인 가구 타겟 싱글 서빙 소스 아이디어를 레시피 개발부터 패키징, 상업용 사업자 등록까지 완수하여 <strong>'소스포켓'을 창업(PM)</strong>했습니다. 또한 아티젠스페이스 인턴 시 이용자가 웹 도메인에서 AR 게임을 커스텀하고 결제할 수 있도록 <strong>B2B WebAR 마케팅 시스템 파라미터 및 유저 동선을 직접 설계</strong>했습니다.
+                            </p>
+                        </div>
+
+                        <!-- 배운 점 & 성과 -->
+                        <div class="bg-black/30 rounded-2xl p-5 border border-white/5 space-y-2">
+                            <div class="flex items-center gap-2 text-emerald-400 text-sm font-bold">
+                                <i class="fa-solid fa-trophy"></i> 배운 점 & 성과
+                            </div>
+                            <p class="text-sm text-slate-300 leading-relaxed">
+                                기술과 아이디어가 어떻게 실제 수익화 구조(결제 인프라, B2B 제안)와 연결되는지 실무 현장에서 체득했습니다. 막연한 기획이 아닌 <strong>'실현 가능한 비즈니스'</strong>를 그릴 수 있게 되었습니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience 3 -->
+                <div class="glass-card rounded-3xl p-8 transition-all hover:border-pink-500/40 relative overflow-hidden group">
+                    <div class="flex flex-wrap items-center justify-between gap-4 mb-6 border-b border-white/10 pb-4">
+                        <div class="flex items-center gap-3">
+                            <span class="px-3 py-1 rounded-lg bg-pink-500/20 text-pink-300 text-xs font-bold uppercase">Experience 03</span>
+                            <h3 class="text-2xl font-bold text-white">본질에 집중하는 몰입: 팔복예술공장 미디어아트 & 단편소설 출판</h3>
+                        </div>
+                        <span class="text-xs text-slate-400 font-mono bg-white/5 px-3 py-1 rounded-full">전시 기획 · 글ego 출판</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- 문제의식 -->
+                        <div class="bg-black/30 rounded-2xl p-5 border border-white/5 space-y-2">
+                            <div class="flex items-center gap-2 text-rose-400 text-sm font-bold">
+                                <i class="fa-solid fa-circle-exclamation"></i> 문제의식
+                            </div>
+                            <p class="text-sm text-slate-300 leading-relaxed">
+                                장황한 설명이나 불필요한 꾸밈보다는, 관객(독자)이 즉각적으로 몰입할 수 있는 강력한 세계관과 최적화된 동선이 필요했습니다.
+                            </p>
+                        </div>
+
+                        <!-- 적극적 실행 -->
+                        <div class="bg-black/30 rounded-2xl p-5 border border-white/5 space-y-2">
+                            <div class="flex items-center gap-2 text-amber-400 text-sm font-bold">
+                                <i class="fa-solid fa-hammer"></i> 적극적 실행
+                            </div>
+                            <p class="text-sm text-slate-300 leading-relaxed">
+                                '백색'과 '사후세계'를 주제로 <strong>언리얼 엔진과 생성형 AI(Midjourney, Kling AI)를 융합하여 미디어아트 전시를 연출</strong>했습니다. '글ego' 프로젝트에서는 '획일화에 저항하는 정체성'의 세계관을 정립하고 지속적인 합평/퇴고를 거쳐 <strong>단편소설을 정식 출판</strong>했습니다.
+                            </p>
+                        </div>
+
+                        <!-- 배운 점 & 성과 -->
+                        <div class="bg-black/30 rounded-2xl p-5 border border-white/5 space-y-2">
+                            <div class="flex items-center gap-2 text-emerald-400 text-sm font-bold">
+                                <i class="fa-solid fa-trophy"></i> 배운 점 & 성과
+                            </div>
+                            <p class="text-sm text-slate-300 leading-relaxed">
+                                전시 현장에서의 관람객 동선(User Journey)과 소설 독자의 시선을 끊임없이 교차 검증하며, 불필요한 요소를 덜어내고 <strong>콘텐츠의 본질과 몰입감(Presence)</strong>에 집중하는 법을 배웠습니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: WORK HISTORY & AWARDS -->
+        <section id="history" class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+            <!-- Left: Timeline History (7 cols) -->
+            <div class="lg:col-span-7 space-y-6">
+                <div class="space-y-1">
+                    <span class="text-xs font-bold tracking-widest text-indigo-400 uppercase">Work & Experience</span>
+                    <h2 class="text-2xl font-bold text-white flex items-center gap-2">
+                        <i class="fa-solid fa-briefcase text-indigo-400"></i> 실무 경험 및 주요 이력
+                    </h2>
+                </div>
+
+                <div class="relative pl-6 border-l border-indigo-500/30 space-y-6 pt-2">
+                    <!-- History Item 1 -->
+                    <div class="relative group">
+                        <span class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-indigo-500 border-4 border-[#0b0f19] group-hover:scale-125 transition-transform"></span>
+                        <div class="text-xs font-semibold text-indigo-400 font-mono">2026.03 ~ 2026.07</div>
+                        <h4 class="text-base font-bold text-white">아티젠스페이스 (Artigenes-Space) 기획·영업 인턴</h4>
+                        <p class="text-xs text-slate-300 mt-1">사이트 MVP 기획, WebAR 비즈니스 동선 설계, AI 영상 제작 프로토타이핑</p>
+                    </div>
+
+                    <!-- History Item 2 -->
+                    <div class="relative group">
+                        <span class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-indigo-500 border-4 border-[#0b0f19] group-hover:scale-125 transition-transform"></span>
+                        <div class="text-xs font-semibold text-indigo-400 font-mono">2026.07 ~ 2026.08</div>
+                        <h4 class="text-base font-bold text-white">청농신문 대학생 기자단 수료 및 우수기자</h4>
+                        <p class="text-xs text-slate-300 mt-1">농업 및 스마트 바이오 산업 현장 취재 및 심층 기사 발행</p>
+                    </div>
+
+                    <!-- History Item 3 -->
+                    <div class="relative group">
+                        <span class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-indigo-500 border-4 border-[#0b0f19] group-hover:scale-125 transition-transform"></span>
+                        <div class="text-xs font-semibold text-indigo-400 font-mono">2026.01 ~ 2026.02</div>
+                        <h4 class="text-base font-bold text-white">필리핀 어학연수 & 베트남 기업 탐방</h4>
+                        <p class="text-xs text-slate-300 mt-1">글로벌 산업 트렌드 분석 및 해외 비즈니스 인사이트 도출</p>
+                    </div>
+
+                    <!-- History Item 4 -->
+                    <div class="relative group">
+                        <span class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-indigo-500 border-4 border-[#0b0f19] group-hover:scale-125 transition-transform"></span>
+                        <div class="text-xs font-semibold text-indigo-400 font-mono">2025.12 ~ 2026.06</div>
+                        <h4 class="text-base font-bold text-white">차세대마케팅리더 22기 이수</h4>
+                        <p class="text-xs text-slate-300 mt-1">22편의 전문 마케팅 기사 기획 및 작성</p>
+                    </div>
+
+                    <!-- History Item 5 -->
+                    <div class="relative group">
+                        <span class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-indigo-500 border-4 border-[#0b0f19] group-hover:scale-125 transition-transform"></span>
+                        <div class="text-xs font-semibold text-indigo-400 font-mono">2025.08 ~ 2025.12</div>
+                        <h4 class="text-base font-bold text-white">창업교육센터 '소스포켓' 창업 팀장(PM)</h4>
+                        <p class="text-xs text-slate-300 mt-1">1인 가구 타겟 싱글 서빙 소스 레시피 개발, 패키징, 사업자 등록 및 프리마켓 론칭</p>
+                    </div>
+
+                    <!-- History Item 6 -->
+                    <div class="relative group">
+                        <span class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-indigo-500 border-4 border-[#0b0f19] group-hover:scale-125 transition-transform"></span>
+                        <div class="text-xs font-semibold text-indigo-400 font-mono">2025.08 ~ 2025.10</div>
+                        <h4 class="text-base font-bold text-white">팔복예술공장 미디어아트 전시 기획 및 시각화</h4>
+                        <p class="text-xs text-slate-300 mt-1">언리얼 엔진(Unreal Engine) 및 생성형 AI 기반 공간 연출</p>
+                    </div>
+
+                    <!-- History Item 7 -->
+                    <div class="relative group">
+                        <span class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-indigo-500 border-4 border-[#0b0f19] group-hover:scale-125 transition-transform"></span>
+                        <div class="text-xs font-semibold text-indigo-400 font-mono">2025.07 ~ 2025.11</div>
+                        <h4 class="text-base font-bold text-white">글ego 단편소설 출판 프로젝트</h4>
+                        <p class="text-xs text-slate-300 mt-1">세계관 기획, 창작 및 합평을 거쳐 단편소설 정식 출판</p>
+                    </div>
+
+                    <!-- History Item 8 -->
+                    <div class="relative group">
+                        <span class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-indigo-500 border-4 border-[#0b0f19] group-hover:scale-125 transition-transform"></span>
+                        <div class="text-xs font-semibold text-indigo-400 font-mono">2025.03 ~ 2025.08</div>
+                        <h4 class="text-base font-bold text-white">전북대 4H 기획국장</h4>
+                        <p class="text-xs text-slate-300 mt-1">예산 총괄 기획, 체험 프로그램 운영 및 팀워크 중재</p>
+                    </div>
+
+                    <!-- History Item 9 -->
+                    <div class="relative group">
+                        <span class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-indigo-500 border-4 border-[#0b0f19] group-hover:scale-125 transition-transform"></span>
+                        <div class="text-xs font-semibold text-indigo-400 font-mono">2025.01 ~ 2025.06</div>
+                        <h4 class="text-base font-bold text-white">식물환경조절공학 연구실 스마트팜 데이터 연구</h4>
+                        <p class="text-xs text-slate-300 mt-1">수경재배 하드웨어 구축, 생육 데이터 샘플링 및 한국원예학회 포스터 발표</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Awards & Certifications (5 cols) -->
+            <div class="lg:col-span-5 space-y-6">
+                <!-- Awards -->
+                <div class="space-y-4">
+                    <div class="space-y-1">
+                        <span class="text-xs font-bold tracking-widest text-pink-400 uppercase">Achievements</span>
+                        <h2 class="text-2xl font-bold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-award text-pink-400"></i> 수상 이력 (Awards)
+                        </h2>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div class="glass-card rounded-xl p-4 flex items-start gap-3 border-l-4 border-l-pink-500">
+                            <div class="text-pink-400 text-lg mt-0.5"><i class="fa-solid fa-medal"></i></div>
+                            <div class="space-y-0.5">
+                                <div class="text-xs text-pink-300 font-mono">2025.12</div>
+                                <h4 class="text-sm font-bold text-white">첨단 디지털 문화콘텐츠 육성공간 지원 창업 오디션 참가상 (3등)</h4>
+                                <p class="text-xs text-slate-400">전주정보문화산업진흥원</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card rounded-xl p-4 flex items-start gap-3 border-l-4 border-l-pink-500">
+                            <div class="text-pink-400 text-lg mt-0.5"><i class="fa-solid fa-medal"></i></div>
+                            <div class="space-y-0.5">
+                                <div class="text-xs text-pink-300 font-mono">2025.11</div>
+                                <h4 class="text-sm font-bold text-white">인스타그램 콘텐츠 공모전 장려상</h4>
+                                <p class="text-xs text-slate-400">MnJ문화복지재단</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card rounded-xl p-4 flex items-start gap-3 border-l-4 border-l-indigo-500">
+                            <div class="text-indigo-400 text-lg mt-0.5"><i class="fa-solid fa-medal"></i></div>
+                            <div class="space-y-0.5">
+                                <div class="text-xs text-indigo-300 font-mono">2025.10</div>
+                                <h4 class="text-sm font-bold text-white">국가식품클러스터 기업분석 경진대회 최우수상 (2등)</h4>
+                                <p class="text-xs text-slate-400">한국식품산업클러스터진흥원</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card rounded-xl p-4 flex items-start gap-3 border-l-4 border-l-pink-500">
+                            <div class="text-pink-400 text-lg mt-0.5"><i class="fa-solid fa-medal"></i></div>
+                            <div class="space-y-0.5">
+                                <div class="text-xs text-pink-300 font-mono">2025.08</div>
+                                <h4 class="text-sm font-bold text-white">전북·제주 리빙랩 캠프 장려상 (3등)</h4>
+                                <p class="text-xs text-slate-400">전북·제주 공동교육혁신센터</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card rounded-xl p-4 flex items-start gap-3 border-l-4 border-l-indigo-500">
+                            <div class="text-indigo-400 text-lg mt-0.5"><i class="fa-solid fa-medal"></i></div>
+                            <div class="space-y-0.5">
+                                <div class="text-xs text-indigo-300 font-mono">2025.06</div>
+                                <h4 class="text-sm font-bold text-white">북트레일러 공모전 우수상 (2등)</h4>
+                                <p class="text-xs text-slate-400">전북대학교 중앙도서관장</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications -->
+                <div class="space-y-4 pt-4">
+                    <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                        <i class="fa-solid fa-id-card text-cyan-400"></i> 보유 자격증 (Certifications)
+                    </h3>
+                    <div class="glass-card rounded-xl p-4 flex items-center gap-3">
+                        <i class="fa-solid fa-car text-cyan-400 text-xl"></i>
+                        <div>
+                            <h4 class="text-sm font-bold text-white">1종 보통 운전면허</h4>
+                            <p class="text-xs text-slate-400">2022.01 합격 · 경찰청</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: PORTFOLIO & WORK ATTACHMENTS -->
+        <section id="portfolio" class="space-y-8">
+            <div class="space-y-2">
+                <span class="text-xs font-bold tracking-widest text-indigo-400 uppercase">Portfolio Attachments</span>
+                <h2 class="text-3xl font-bold text-white flex items-center gap-3">
+                    <span>📎 포트폴리오 첨부 및 시각화 작업물</span>
+                </h2>
+                <p class="text-slate-400 text-sm">텍스트 너머의 실제 결과물과 시각화 역량을 직접 확인하실 수 있습니다.</p>
+            </div>
+
+            <!-- Video Section (Embedded + Info) -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Video 1 -->
+                <div class="glass-card rounded-3xl p-6 space-y-4 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="px-3 py-1 rounded-md bg-rose-500/20 text-rose-300 text-xs font-bold flex items-center gap-1.5">
+                                <i class="fa-brands fa-youtube"></i> 자체 IP 영상
+                            </span>
+                            <span class="text-xs text-slate-400 font-mono">2025.09 ~ 2025.12 (1인)</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">자체 IP 활용 전주 소개 영상 기획 및 제작</h3>
+                        
+                        <!-- Video Embed -->
+                        <div class="relative w-full pb-[56.25%] rounded-2xl overflow-hidden shadow-lg border border-white/10 bg-black">
+                            <iframe 
+                                class="absolute top-0 left-0 w-full h-full" 
+                                src="https://www.youtube.com/embed/-YYkKCpJB9Q" 
+                                title="자체 IP 활용 전주 소개 영상" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+
+                        <p class="text-sm text-slate-300 leading-relaxed">
+                            직접 자체 IP를 기획 및 창작하여, 전주에 여행을 와서 사진을 찍으며 지역을 소개하는 영상을 제작했습니다.
+                        </p>
+                    </div>
+
+                    <div class="space-y-3 pt-3 border-t border-white/5">
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2 py-0.5 rounded bg-white/5 text-slate-300 text-xs font-mono">Midjourney</span>
+                            <span class="px-2 py-0.5 rounded bg-white/5 text-slate-300 text-xs font-mono">Premiere</span>
+                            <span class="px-2 py-0.5 rounded bg-white/5 text-slate-300 text-xs font-mono">Gemini</span>
+                            <span class="px-2 py-0.5 rounded bg-white/5 text-slate-300 text-xs font-mono">Blender</span>
+                        </div>
+                        <a href="https://youtu.be/-YYkKCpJB9Q?si=FU7i8ybZW4WlYTvB" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs text-indigo-400 hover:text-indigo-300 font-semibold transition-colors">
+                            <span>YouTube에서 바로보기</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Video 2 -->
+                <div class="glass-card rounded-3xl p-6 space-y-4 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="px-3 py-1 rounded-md bg-purple-500/20 text-purple-300 text-xs font-bold flex items-center gap-1.5">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i> 미디어아트 연출
+                            </span>
+                            <span class="text-xs text-slate-400 font-mono">2025.08 ~ 2025.10 (3인)</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">미디어아트 전시 공간 연출 기획 영상</h3>
+                        
+                        <!-- Video Embed -->
+                        <div class="relative w-full pb-[56.25%] rounded-2xl overflow-hidden shadow-lg border border-white/10 bg-black">
+                            <iframe 
+                                class="absolute top-0 left-0 w-full h-full" 
+                                src="https://www.youtube.com/embed/Di_JzRnh7-g" 
+                                title="미디어아트 전시 공간 연출 기획 영상" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+
+                        <p class="text-sm text-slate-300 leading-relaxed">
+                            '죽음'에 대한 근원적인 두려움과 불안감을 미디어아트를 통해 시각적으로 탐색하고, 이를 아름다움과 새로운 시작으로 재해석하고자 기획된 프로젝트입니다.
+                        </p>
+                    </div>
+
+                    <div class="space-y-3 pt-3 border-t border-white/5">
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2 py-0.5 rounded bg-white/5 text-slate-300 text-xs font-mono">Unreal Engine</span>
+                            <span class="px-2 py-0.5 rounded bg-white/5 text-slate-300 text-xs font-mono">Premiere</span>
+                            <span class="px-2 py-0.5 rounded bg-white/5 text-slate-300 text-xs font-mono">Kling AI</span>
+                            <span class="px-2 py-0.5 rounded bg-white/5 text-slate-300 text-xs font-mono">Gemini</span>
+                        </div>
+                        <a href="https://youtu.be/Di_JzRnh7-g?si=Xg47SQtyBmpwv0qH" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs text-pink-400 hover:text-pink-300 font-semibold transition-colors">
+                            <span>YouTube에서 바로보기</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PDF Documents & Project Documents -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+                <!-- PDF 1 -->
+                <div class="glass-card rounded-2xl p-6 flex items-start gap-4 hover:border-amber-500/30 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-2xl flex-shrink-0 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-file-pdf"></i>
+                    </div>
+                    <div class="space-y-2 flex-1">
+                        <div class="flex items-center justify-between">
+                            <h4 class="font-bold text-white text-base group-hover:text-amber-300 transition-colors">소스포켓 사업 기획서 및 프리마켓 결과보고서</h4>
+                            <span class="text-[11px] px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-mono">PDF 문서</span>
+                        </div>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            1인 가구 타겟 싱글 서빙 소스포켓의 기획 배경, 레시피 및 패키징 개발 과정, 프리마켓 참가 결과 및 수익화 지표가 정리된 문서입니다.
+                        </p>
+                        <div class="pt-2">
+                            <span class="text-xs text-slate-400 font-mono flex items-center gap-1.5">
+                                <i class="fa-solid fa-paperclip text-slate-500"></i> 소스포켓_프리마켓_참가_신청서&결과보고서.pdf
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PDF 2 -->
+                <div class="glass-card rounded-2xl p-6 flex items-start gap-4 hover:border-cyan-500/30 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-2xl flex-shrink-0 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-file-waveform"></i>
+                    </div>
+                    <div class="space-y-2 flex-1">
+                        <div class="flex items-center justify-between">
+                            <h4 class="font-bold text-white text-base group-hover:text-cyan-300 transition-colors">원예학회 학술 포스터 (데이터 구조화 결과물)</h4>
+                            <span class="text-[11px] px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 font-mono">학술 발표 포스터</span>
+                        </div>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            수경재배 시스템 직접 구축을 통해 도출한 기공전도도 및 광합성 효율 통계(ANOVA) 검증 데이터 분석 결과물입니다.
+                        </p>
+                        <div class="pt-2">
+                            <span class="text-xs text-slate-400 font-mono flex items-center gap-1.5">
+                                <i class="fa-solid fa-paperclip text-slate-500"></i> 원예학회_포스터.pdf
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER / CTA -->
+        <footer class="pt-12 border-t border-white/10 text-center space-y-6">
+            <div class="inline-flex flex-col items-center space-y-3">
+                <div class="w-12 h-12 rounded-full bg-gradient-to-r from-indigo-500 to-pink-500 flex items-center justify-center text-white text-xl shadow-lg shadow-indigo-500/30">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </div>
+                <h3 class="text-2xl font-extrabold text-white">함께 가치 있는 몰입을 만들어갈 기회를 기다립니다</h3>
+                <p class="text-slate-400 text-sm max-w-md">
+                    데이터의 객관성과 예술의 감각, 그리고 타협 없는 실행력으로 최고의 결과물을 만듭니다.
+                </p>
+            </div>
+
+            <div class="flex justify-center gap-6 text-sm text-slate-400 pt-4">
+                <a href="mailto:yewon0489@gmail.com" class="hover:text-white transition-colors flex items-center gap-2">
+                    <i class="fa-regular fa-envelope text-indigo-400"></i> yewon0489@gmail.com
+                </a>
+                <span>•</span>
+                <span class="flex items-center gap-2">
+                    <i class="fa-solid fa-phone text-indigo-400"></i> 010-4570-0489
+                </span>
+            </div>
+
+            <p class="text-xs text-slate-600 pt-6">
+                © 2026 Park Ye Won (박예원). All rights reserved.
+            </p>
+        </footer>
+
+    </main>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
